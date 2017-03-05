@@ -10,7 +10,14 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Styles -->
+    <!-- Styles-->
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material-fullpalette.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
+
+
     <link href="/css/app.css" rel="stylesheet">
 
     <!-- Scripts -->
@@ -53,12 +60,7 @@
                             <li><a href="{{ url('/login') }}">Login</a></li>
                             <li><a href="{{ url('/register') }}">Register</a></li>
                         @else
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
-
-                                <ul class="dropdown-menu" role="menu">
+                           
                                     <li>
                                         <a href="{{ url('/logout') }}"
                                             onclick="event.preventDefault();
@@ -70,8 +72,7 @@
                                             {{ csrf_field() }}
                                         </form>
                                     </li>
-                                </ul>
-                            </li>
+                               
                         @endif
                     </ul>
                 </div>
