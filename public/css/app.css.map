@@ -1,0 +1,1 @@
+{"version":3,"sources":["app.scss"],"names":[],"mappings":"AAIA;EACC,sBAAqB;CACrB","file":"app.css","sourcesContent":["\n// Variables\n@import \"variables\";\n\nbody{\n\tbackground-color:red;\n}\n"]}
