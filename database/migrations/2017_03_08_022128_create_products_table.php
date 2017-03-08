@@ -13,7 +13,15 @@ class CreateProductsTable extends Migration
      */
     public function up()
     {
-        //
+        //realiza cambios
+        Schema::create('products', function(Blueprint $tabla){
+            $tabla->increments("id");
+            $tabla->integer('user_id')->unsigned()->index();
+            $tabla->string('title');
+            $tabla->text('description');
+            $tabla->decimal('pricing',9,2);
+            $tabla->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,7 @@ class CreateProductsTable extends Migration
      */
     public function down()
     {
-        //
+        //revertir los cambios
+        Schema::drop('products');
     }
 }
