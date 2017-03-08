@@ -23,3 +23,16 @@ Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 Route::get('main', 'MainController@home');
+
+//ligamos el controlador con nuestras rutas
+Route::resource('products', 'ProductsController');
+/*
+	GET /products => index
+	POST /products => store
+	GET /products/create => Formulario para crear
+
+	GET /products/:id => Mostrar un producto con un id
+	GET /products/:id/edit
+	PUT/PATCH /products/:id
+	DELETE /products/:id
+*/

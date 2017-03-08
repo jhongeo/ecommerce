@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+//importamos el modelo Products
+use App\Product;
+
 class ProductsController extends Controller
 {
     /**
@@ -13,7 +16,11 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+        //Select * from Products => Eloquent
+        $products = Product::all();
+
+        //muestra toda la colleccion
+        return view('products.index', ['products' => $products]);
     }
 
     /**
@@ -23,7 +30,7 @@ class ProductsController extends Controller
      */
     public function create()
     {
-        //
+        //desplegar la vista con formulario para crear un nuevo producto
     }
 
     /**
@@ -34,7 +41,7 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        //guarda el producto
     }
 
     /**
@@ -45,7 +52,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        //muestra producto con este id
     }
 
     /**
@@ -56,7 +63,7 @@ class ProductsController extends Controller
      */
     public function edit($id)
     {
-        //
+        //edita con este it
     }
 
     /**
@@ -68,7 +75,7 @@ class ProductsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //actualiza con este id
     }
 
     /**
@@ -79,6 +86,6 @@ class ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        //elimina con este id
     }
 }
