@@ -19,7 +19,7 @@ class ProductsController extends Controller
         //Select * from Products => Eloquent
         $products = Product::all();
 
-        //muestra toda la colleccion
+        //muestra toda la colección
         return view('products.index', ['products' => $products]);
     }
 
@@ -30,7 +30,9 @@ class ProductsController extends Controller
      */
     public function create()
     {
+
         //desplegar la vista con formulario para crear un nuevo producto
+        return view('products.create');
     }
 
     /**
