@@ -33,7 +33,8 @@ class ProductsController extends Controller
     {
 
         //desplegar la vista con formulario para crear un nuevo producto
-        return view('products.create');
+        $product = new Product;
+        return view("products.create", ["product" => $product]);
     }
 
     /**
@@ -81,6 +82,8 @@ class ProductsController extends Controller
     public function edit($id)
     {
         //edita con este it
+        $product = Product::find($id);
+        return view("products.edit", ["product" => $product]);
     }
 
     /**
