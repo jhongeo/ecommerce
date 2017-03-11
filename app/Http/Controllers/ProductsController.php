@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 //importamos el modelo Products
 use App\Product;
+use Illuminate\Support\Facades\Auth;
 
 class ProductsController extends Controller
 {
@@ -44,6 +45,20 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         //guarda el producto
+        $product = new Product;
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+        $product->user_id = Auth::user()->id;
+
+        $product->save();
+
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.create");
+        }
     }
 
     /**

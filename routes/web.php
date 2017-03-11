@@ -26,7 +26,7 @@ Route::get('main', 'MainController@home');
 
 //ligamos el controlador con nuestras rutas
 Route::resource('products', 'ProductsController');
-Route::resource('products/create', 'ProductsController@create');
+Route::resource('products/create', 'ProductsController@Create');
 /*
 	GET /products => index
 	POST /products => store
