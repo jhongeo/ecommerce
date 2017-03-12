@@ -53,12 +53,12 @@ class ProductsController extends Controller
         $product->pricing = $request->pricing;
         $product->user_id = Auth::user()->id;
 
-        $product->save();
+        //$product->save();
 
         if($product->save()){
             return redirect("/products");
         }else{
-            return view("products.create");
+            return view("products.create", ["product" => $product]);
         }
     }
 
@@ -96,6 +96,18 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         //actualiza con este id
+        $product = Product::find($id);
+
+        $product->title = $request->title;
+        $product->description = $request->description;
+        $product->pricing = $request->pricing;
+
+        //$product->save();
+        if($product->save()){
+            return redirect("/products");
+        }else{
+            return view("products.edit", ["product" => $product]);
+        }
     }
 
     /**
